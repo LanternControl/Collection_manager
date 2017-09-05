@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Magic: The Gathering Collection</title>
+</head>
+<body>
+ <a href="/">Main Menu</a>
+ <h1>Edit a card</h1>
+ {{#magic_cards}}
+ <form action="/{{_id}}/edit" method="POST">
+  <label for="{{name}}">Name</label>
+  <input type="text" id="{{name}}" name="name" value="{{Name}}" required />
+  <label for="{{condition}}">Condition</label>
+  <input type="text" id="{{condition}}" name="condition" value="{{Condition}}" />
+  <label for="{{rarity}}">Rarity</label>
+  <input type="text" id="{{rarity}}" name="rarity" value="{{Rarity}}" />
+  <label for="{{expansion}}">Set</label>
+  <input type="text" id="{{set}}" name="set" value="{{Set}}" />
+  <label for="{{quantity}}">Quantity</label>
+  <input type="number" id="{{quantity}}" name="quantity" value="{{Quantity}}" />
+  <button type="submit">Add your card</button>
+ </form>
+ {{/magic_cards}}
+</body>
+
+</html>

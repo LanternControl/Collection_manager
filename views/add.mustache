@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Magic: The Gathering Collection</title>
+</head>
+<body>
+ <a href="/">Main Menu</a>
+ <h1>Add a card</h1>
+ <form action="/add" method="POST">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" placeholder="Name" required />
+  <label for="condition">Condition</label>
+  <input type="text" id="condition" name="condition" placeholder="Condition" />
+  <label for="rarity">Rarity</label>
+  <input type="text" id="rarity" name="rarity" placeholder="Rarity" />
+  <label for="expansion">Set</label>
+  <input type="text" id="set" name="set" placeholder="Set" />
+  <label for="quantity">Quantity</label>
+  <input type="number" id="quantity" name="quantity" placeholder="Quantity" />
+  <button type="submit">Add your card</button>
+ </form>
+</body>
+
+</html>

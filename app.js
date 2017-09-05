@@ -8,13 +8,15 @@ const DUPLICATE_RECORD_ERROR = 11000;
 
 const Magic_cards = require("./models/magic_cards.js");
 
+const app = express();
+
 const mongoURL = 'mongodb://localhost:27017/newdb';
 mongoose.connect(mongoURL, {useMongoClient: true});
 mongoose.Promise = require('bluebird');
 
 app.use(bodyParser.urlencoded({ extended:true }));
 
-app.engine('mustache', mustache());
+app.engine('mustache', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mustache');
 
@@ -23,7 +25,7 @@ app.get('/add', function(req, res){
 });
 
 app.post('/add', function(req, res){
-  Magic_cards.create.(req.body).then(function(magic_cards){
+  Magic_cards.create(req.body).then(function(magic_cards){
     res.redirect('/');
   });
 });
@@ -63,7 +65,7 @@ app.post('/:id/edit', function(req, res) {
 
 
 app.get('/', function(req, res){
-  Magic_cards.find().then function(magic_cards) {
+  Magic_cards.find().then(function(magic_cards) {
     res.render('index', {
       magic_cards: magic_cards
     });

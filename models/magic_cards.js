@@ -4,7 +4,7 @@ const magic_cards_schema = new mongoose.Schema({
   name: {type: String, required: true},
   condition: String,
   rarity: {type: String, required: true},
-  set: {type: String, required: true},
+  expansion: {type: String, required: true},
   quantity: Number,
   qualities: [{
     mana_cost: {type: Number, required: true, default: 0},

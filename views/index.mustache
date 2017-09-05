@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Magic: The Gathering Collection</title>
+</head>
+<body>
+ <h1>Binder</h1>
+ <a href='/add'>Add a card</a>
+ <div class="binder">
+  {{#magic_cards}}
+    <a href="{{_id}}">
+     <h2>{{name}}</h2>
+     <h2>{{condition}}</h2>
+     <h2>{{rarity}}</h2>
+     <h2>{{expansion}}</h2>
+     /// nested things, need help
+    </a>
+  {{/magic_cards}}
+ </div>
+</body>
+
+</html>
