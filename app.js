@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const bluebird = require('bluebird');
 const DUPLICATE_RECORD_ERROR = 11000;
 
-const Magic_cards = require("./models/magic_cards");
+const Magic_cards = require("./models/magic_cards.js");
 
-const mongoURL = 'mongodb://localhost:27017/magic_cards';
+const mongoURL = 'mongodb://localhost:27017/newdb';
 mongoose.connect(mongoURL, {useMongoClient: true});
 mongoose.Promise = require('bluebird');
 
